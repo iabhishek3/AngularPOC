@@ -1,0 +1,31 @@
+  
+<button mat-button (click)="addtab()">addTab ----------{{node.data.title}}</button>
+<form class="example-form">
+</form>
+
+<mat-tab-group (selectedTabChange)="onLinkClick($event)" *ngIf="node.children">
+   
+      <mat-tab  *ngFor="let tab of node.children; let index = index" [label]="tab.data">
+          <div> 
+            
+
+
+
+
+
+
+              <form class="example-form">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Favorite food" [(ngModel)]="tab.inputOne1" name="tab.inputOne1">
+                  </mat-form-field>
+                
+               
+                </form>
+                {{tab.inputOne1}}
+          </div>        
+        <treenodeui  [node]="tab">    </treenodeui>
+ 
+
+      </mat-tab>
+</mat-tab-group>
+
